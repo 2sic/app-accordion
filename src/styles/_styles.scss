@@ -13,12 +13,6 @@
                     }
                 }
             }
-
-            &:not(.active) {
-                .co-accordion-content {
-                    display: none;
-                }
-            }
         }
         .co-accordion-title {
             border-bottom: 1px solid $secondary;
@@ -73,10 +67,9 @@
             }
         }
         .co-accordion-content {
-            overflow: hidden;
-            transition: all .3s ease-in-out;
+            display: none;
             background-color:transparent;
-            padding: 0 $grid-gutter-width;
+            padding: $grid-gutter-width;
 
             h1, h2, h3 {
                 margin :0;

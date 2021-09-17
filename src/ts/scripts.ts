@@ -1,3 +1,7 @@
+declare let slideDown : any;
+declare let slideUp : any;
+declare let slideToggle : any;
+
 document.addEventListener("DOMContentLoaded", (event) => {
 	// get navHight correct scrollposition
 	var navHeight = document.getElementsByTagName('header')[0].offsetHeight;
@@ -10,17 +14,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
 			event.preventDefault();
 
 			const currentElem = event.currentTarget as HTMLElement;
-			const parent = currentElem.parentElement;			
+			const parent = currentElem.parentElement;	
+			const sibling = currentElem.nextElementSibling;		
 
 			// add hash to url
 			location.hash = currentElem.dataset.hash;
 
 			// open / close mechanic for slide
-			if (!parent.classList.contains('active')) {
-				openAccordion(currentElem);        
-			} else {
-				closeAccordion(currentElem)
-			}
+			slideToggle(sibling);  
+			parent.classList.toggle('active');
 		})
 	});
 
@@ -29,50 +31,18 @@ document.addEventListener("DOMContentLoaded", (event) => {
 		const hash = window.location.hash.replace('#', '');
 		const targetHashElem = document.getElementById(`hash-${hash}`);
 		
-		// if target element exists scroll to element
+		// if target element exists scroll to element and open it
 		if(targetHashElem){
-			const elemOffsetX = targetHashElem.getBoundingClientRect().top + window.scrollY - navHeight
-			
+			const elemOffsetX = targetHashElem.getBoundingClientRect().top + window.scrollY - navHeight;
+			targetHashElem.parentElement.classList.add('active');
+
 			window.scrollTo({
 				top: elemOffsetX,
 				left: 0,
 				behavior: 'smooth'
 			});
 
-			openAccordion(targetHashElem);         
+			slideToggle(targetHashElem.nextElementSibling);        
 		}
-	}
-
-	function openAccordion(elem: HTMLElement) {
-		const parent = elem.parentElement;			
-		const sibling = elem.nextElementSibling as HTMLElement;
-		
-		parent.classList.add('active');
-		sibling.style.height = 'auto';
-
-		let height = sibling.clientHeight + "px";
-
-		sibling.style.height = '0px';
-
-		setTimeout(() => {
-			sibling.style.height = height;
-		}, 0);
-	}
-
-	function closeAccordion(elem: HTMLElement) {
-		const parent = elem.parentElement;			
-		const sibling = elem.nextElementSibling as HTMLElement;
-
-		sibling.style.height = sibling.clientHeight + "px";
-
-		setTimeout(() => {
-			sibling.style.height = '0px';
-		}, 0)
-
-		sibling.addEventListener('transitionend', function () {
-			parent.classList.remove('active');
-		}, {
-			once: true
-		});
 	}
 });
