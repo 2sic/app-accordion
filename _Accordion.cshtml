@@ -2,37 +2,35 @@
 @using ToSic.Razor.Blade;
 @using ToSic.Sxc.Blocks;
 
-<div class="co-container-outer">
-  <div class="co-container-inner co-accordion-wrapper" @Edit.Attribute("quick-edit-config", new { modules = new {  enable = true }})>
-    @foreach (var accord in AsList(Data)) {
-      var initiallyExpanded = accord.InitiallyExpanded ?? false;
+<div class="co-accordion-wrapper" @Edit.Attribute("quick-edit-config", new { modules = new {  enable = true }})>
+  @foreach (var accord in AsList(Data)) {
+    var initiallyExpanded = accord.InitiallyExpanded ?? false;
 
-      <div class="co-accordion-item" @Edit.TagToolbar(accord)>
-        <div id="hash-@accord.EntityId" data-hash="@accord.EntityId" class='co-accordion-title @(initiallyExpanded ? "active" : "")'>
-          <h2 class='@(Text.Has(accord.Icon) ? "" : "co-no-icon")'>
-            @if(Text.Has(accord.Icon)) {
-              <span><i class="co-icon fas @accord.Icon" aria-hidden="true"></i></span>
-            }
-            @accord.Title
-          </h2>
-        </div>
-
-        @* prevent adding content if still showing the demo-item - this is done by only adding the class as needed *@
-        @if(accord.IsDemoItem) {
-          <div class='co-accordion-content'>
-            @Html.Raw(App.Resources.DemoItemMessage)
-          </div>
-        } else {
-          <div class='co-accordion-content sc-content-block-list @(initiallyExpanded ? "d-block" : "")' @Edit.ContextAttributes(accord, field: "DesignedContent")>
-            @foreach (var designedContent in accord.DesignedContent) {
-              @Render.One(designedContent);
-            }
-          </div>
-        }
-
+    <div class='co-accordion-item @(initiallyExpanded ? "active" : "")' @Edit.TagToolbar(accord)>
+      <div id="hash-@accord.EntityId" data-hash="@accord.EntityId" class='co-accordion-title '>
+        <h2 class='@(Text.Has(accord.Icon) ? "" : "co-no-icon")'>
+          @if(Text.Has(accord.Icon)) {
+            <span><i class="co-icon fas @accord.Icon" aria-hidden="true"></i></span>
+          }
+          @accord.Title
+        </h2>
       </div>
-    }
-  </div>
+
+      @* prevent adding content if still showing the demo-item - this is done by only adding the class as needed *@
+      @if(accord.IsDemoItem) {
+        <div class='co-accordion-content'>
+          @Html.Raw(App.Resources.DemoItemMessage)
+        </div>
+      } else {
+        <div class='co-accordion-content sc-content-block-list @(initiallyExpanded ? "d-block" : "")' @Edit.ContextAttributes(accord, field: "DesignedContent")>
+          @foreach (var designedContent in accord.DesignedContent) {
+            @Render.One(designedContent);
+          }
+        </div>
+      }
+
+    </div>
+  }
 </div>
 
 <link rel="stylesheet" href="@App.Path/dist/bs4.min.css" data-enableoptimizations="true" />
