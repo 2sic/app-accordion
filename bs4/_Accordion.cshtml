@@ -1,0 +1,37 @@
+@inherits Custom.Hybrid.Razor12
+@using ToSic.Razor.Blade;
+@using ToSic.Sxc.Blocks;
+
+<div class="app-accordion4-wrapper" @Edit.Attribute("quick-edit-config", new { modules = new {  enable = true }})>
+  @foreach (var accord in AsList(Data)) {
+    var initiallyExpanded = accord.InitiallyExpanded ?? false;
+    var hasIcon = Text.Has(accord.Icon); 
+
+    <div class='app-accordion4-item @(initiallyExpanded ? "active" : "")' @Edit.TagToolbar(accord)>
+      <div id="hash-@accord.EntityId" data-hash="@accord.EntityId" class='app-accordion4-title '>
+        <h2 class='@(hasIcon ? "" : "co-no-icon")'>
+          @if(hasIcon) {
+            <span><i class="co-icon fas @accord.Icon" aria-hidden="true"></i></span>
+          }
+          @accord.Title
+        </h2>
+      </div>
+
+      @* prevent adding content if still showing the demo-item - this is done by only adding the class as needed *@
+      @if(accord.IsDemoItem) {
+        <div class='app-accordion4-content'>
+          @Html.Raw(Resources.DemoItemMessage)
+        </div>
+      } else {
+        <div class='app-accordion4-content sc-content-block-list @(initiallyExpanded ? "d-block" : "")' @Edit.ContextAttributes(accord, field: "DesignedContent")>
+          @foreach (var designedContent in accord.DesignedContent) {
+            @Render.One(designedContent);
+          }
+        </div>
+      }
+
+    </div>
+  }
+</div>
+
+@Html.Partial("./_Accordion.PartAssets.cshtml")

@@ -2,22 +2,22 @@
 @using ToSic.Razor.Blade;
 
 <div class="co-container-outer">
-  <div class="co-container-inner co-accordion-wrapper" @Edit.Attribute("quick-edit-config", new { modules = new {  enable = true }})>
+  <div class="co-container-inner app-accordion4-wrapper" @Edit.Attribute("quick-edit-config", new { modules = new {  enable = true }})>
     @foreach (var accord in AsList(Data)) {
       var initiallyExpanded = accord.InitiallyExpanded ?? false;
 
-      <div class="co-accordion-item" @Edit.TagToolbar(accord)>
-        <div id="a-@accord.EntityId" class='co-accordion-title @(initiallyExpanded ? "active" : "")'>
+      <div class="app-accordion4-item" @Edit.TagToolbar(accord)>
+        <div id="a-@accord.EntityId" class='app-accordion4-title @(initiallyExpanded ? "active" : "")'>
           <h2 class='@(Text.Has(accord.Icon) ? "" : "co-no-icon")'>
             @if(Text.Has(accord.Icon)) {
-              <span><i class="co-icon fas @accord.Icon" aria-hidden="true"></i></span>
+              <span><i class="app-accordion4-icon fas @accord.Icon" aria-hidden="true"></i></span>
             }
             @accord.Title
           </h2>
         </div>
 
         @* prevent adding content if still showing the demo-item - this is done by only adding the class as needed *@
-        <div class='co-accordion-content @(accord.IsDemoItem ? "" : "sc-content-block-list") @(initiallyExpanded ? "d-block" : "")'
+        <div class='app-accordion4-content @(accord.IsDemoItem ? "" : "sc-content-block-list") @(initiallyExpanded ? "d-block" : "")'
           @Edit.ContextAttributes(accord, field: "DesignedContent")>
           @if(accord.IsDemoItem) {
             @Html.Raw(Resources.DemoItemMessage)

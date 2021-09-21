@@ -1,27 +1,24 @@
-declare let slideDown : any;
-declare let slideUp : any;
-declare let slideToggle : any;
-
+import { hide, show, toggle } from 'slidetoggle';
 document.addEventListener("DOMContentLoaded", (event) => {
 	// get navHight correct scrollposition
 	var navHeight = document.getElementsByTagName('header')[0].offsetHeight;
 
 	// attach click to all accordions when loading
-	var accordionOpener = document.querySelectorAll('.co-accordion-title');
+	var accordionOpener = document.querySelectorAll('.app-accordion4-title');
 
-	accordionOpener.forEach((elem: HTMLElement, index) => {		
+	accordionOpener.forEach((elem: HTMLElement, index) => {	
 		elem.addEventListener('click', (event) => {
 			event.preventDefault();
 
 			const currentElem = event.currentTarget as HTMLElement;
 			const parent = currentElem.parentElement;	
-			const sibling = currentElem.nextElementSibling;		
+			const sibling = currentElem.nextElementSibling as HTMLElement;		
 
 			// add hash to url
 			location.hash = currentElem.dataset.hash;
 
 			// open / close mechanic for slide
-			slideToggle(sibling);  
+			toggle(sibling, {});
 			parent.classList.toggle('active');
 		})
 	});
@@ -34,15 +31,19 @@ document.addEventListener("DOMContentLoaded", (event) => {
 		// if target element exists scroll to element and open it
 		if(targetHashElem){
 			const elemOffsetX = targetHashElem.getBoundingClientRect().top + window.scrollY - navHeight;
+			const sibling = targetHashElem.nextElementSibling as HTMLElement; 
+
 			targetHashElem.parentElement.classList.add('active');
 
+			// scroll to element which should open then
 			window.scrollTo({
 				top: elemOffsetX,
 				left: 0,
 				behavior: 'smooth'
 			});
 
-			slideToggle(targetHashElem.nextElementSibling);        
+			// open accordion
+			toggle(sibling, {});
 		}
 	}
 });
