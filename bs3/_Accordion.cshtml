@@ -1,4 +1,4 @@
-@inherits ToSic.Sxc.Dnn.RazorComponent
+@inherits Custom.Hybrid.Razor12
 @using ToSic.Razor.Blade;
 
 <div class="co-container-outer">
@@ -20,7 +20,7 @@
         <div class='co-accordion-content @(accord.IsDemoItem ? "" : "sc-content-block-list") @(initiallyExpanded ? "d-block" : "")'
           @Edit.ContextAttributes(accord, field: "DesignedContent")>
           @if(accord.IsDemoItem) {
-            @Html.Raw(App.Resources.DemoItemMessage)
+            @Html.Raw(Resources.DemoItemMessage)
           } else {
             foreach (var designedContent in accord.DesignedContent) {
               @ToSic.Sxc.Blocks.Render.One(designedContent);
