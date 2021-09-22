@@ -10,7 +10,7 @@
     <div class='app-accordion4-item @(initiallyExpanded ? "active" : "")' @Edit.TagToolbar(accord)>
       <div id="hash-@accord.EntityId" data-hash="@accord.EntityId" class='app-accordion4-title '>
         <h2 class='@(hasIcon ? "" : "co-no-icon")'>
-          @if(hasIcon) {
+          @if (hasIcon) {
             <span><i class="co-icon fas @accord.Icon" aria-hidden="true"></i></span>
           }
           @accord.Title
@@ -18,7 +18,7 @@
       </div>
 
       @* prevent adding content if still showing the demo-item - this is done by only adding the class as needed *@
-      @if(accord.IsDemoItem) {
+      @if (accord.IsDemoItem) {
         <div class='app-accordion4-content'>
           @Html.Raw(Resources.DemoItemMessage)
         </div>
