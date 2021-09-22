@@ -4,7 +4,8 @@
   "description": "A content accordion app for 2sxc",
   "main": "(none)",
   "scripts": {
-    "build-prod": "webpack"
+    "build-bs3": "webpack --env style=bs3",
+    "build-bs4": "webpack --env style=bs4"
   },
   "author": "2sic internet solutions",
   "license": "MIT",
