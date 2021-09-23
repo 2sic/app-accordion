@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="12.05.00" ExportDate="2021-09-22T08:58:17.7334545+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="12.05.00" ExportDate="2021-09-23T14:38:29.0375448+02:00">
   <Header>
     <App Guid="8b110476-8fda-4d76-9252-e70e2fee6315" />
     <Language Default="en-us" />
@@ -240,6 +240,24 @@
     <AttributeSet StaticName="App-Settings" Name="App-Settings" Description="Stores settings for an app" Scope="2SexyContent-App" AlwaysShareConfiguration="false">
       <Attributes />
     </AttributeSet>
+    <AttributeSet StaticName="22a1ccf5-57cc-4c33-bb82-40db4572a17e" Name="TestContent" Description="" Scope="2SexyContent" AlwaysShareConfiguration="false">
+      <Attributes>
+        <Attribute StaticName="Title" Type="String" IsTitle="true">
+          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="d0365251-4d5a-4218-9987-1ade47bf7710" Json="True" KeyNumber="4861">
+            <Value Key="InputType" Value="string-default" Type="String" />
+            <Value Key="Name" Value="Title" Type="String" />
+            <Value Key="VisibleInEditUI" Value="True" Type="Boolean" />
+          </Entity>
+        </Attribute>
+        <Attribute StaticName="Message" Type="String" IsTitle="false">
+          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="084041a6-c037-4aa7-bdef-7aba77953cc5" Json="True" KeyNumber="4862">
+            <Value Key="InputType" Value="string-wysiwyg" Type="String" />
+            <Value Key="Name" Value="Messagu" Type="String" />
+            <Value Key="VisibleInEditUI" Value="True" Type="Boolean" />
+          </Entity>
+        </Attribute>
+      </Attributes>
+    </AttributeSet>
   </AttributeSets>
   <Entities>
     <Entity AssignmentObjectType="App" AttributeSetStaticName="2SexyContent-App" AttributeSetName="2SexyContent-App" EntityGUID="41a79a08-f461-4b47-9bc6-a5717b7bc0c2" Json="True" KeyNumber="49">
@@ -383,7 +401,7 @@
       </Value>
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="884e65b4-8f1c-4bc9-897f-147dcabeb941" AttributeSetName="Accordion" EntityGUID="70e4e39f-e5ba-48cf-879d-7dac1e159442">
-      <Value Key="DesignedContent" Value="556478b1-cb14-4cf0-a7cd-376c4c93e2ff" Type="Entity" />
+      <Value Key="DesignedContent" Value="3a0605aa-a9ec-4a34-b7ca-be5d3520696c,ed1c4a6a-e880-455c-be42-ecc44d7e4a98" Type="Entity" />
       <Value Key="Icon" Value="fa-align-justify" Type="String">
         <Dimension DimensionID="42" ReadOnly="false" />
       </Value>
@@ -392,6 +410,9 @@
       </Value>
       <Value Key="Title" Value="Demo Accordion with long Content" Type="String">
         <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+      <Value Key="Title" Value="Demo Accordeon mit langem Inhalt" Type="String">
+        <Dimension DimensionID="43" ReadOnly="false" />
       </Value>
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="ContentGroupReference" AttributeSetName="ContentGroupReference" EntityGUID="556478b1-cb14-4cf0-a7cd-376c4c93e2ff" Json="True">
@@ -408,6 +429,127 @@
         <Dimension DimensionID="42" ReadOnly="false" />
       </Value>
       <Value Key="Title" Value="Test for Innercontent" Type="String">
+        <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity AssignmentObjectType="ContentType" AttributeSetStaticName="ContentType" AttributeSetName="ContentType" EntityGUID="80223a8e-d00d-479c-ad67-e0e39c209f4b" Json="True" KeyString="22a1ccf5-57cc-4c33-bb82-40db4572a17e">
+      <Value Key="Description" Value="" Type="String">
+        <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+      <Value Key="DynamicChildrenField" Value="" Type="String">
+        <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+      <Value Key="EditInstructions" Value="&lt;h2&gt;Important&lt;/h2&gt;&#xA;&lt;p&gt;This is just testing content, to verify the Accordion works. It's not meant for use in real-live sites, which is also why the view for this is hidden in the configuration.&amp;nbsp;&lt;/p&gt;" Type="String">
+        <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+      <Value Key="Icon" Value="" Type="Hyperlink">
+        <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+      <Value Key="Label" Value="TestContent" Type="String">
+        <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+      <Value Key="Link" Value="" Type="Hyperlink">
+        <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+      <Value Key="ListInstructions" Value="" Type="String">
+        <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+      <Value Key="Notes" Value="" Type="String">
+        <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity AssignmentObjectType="Default" AttributeSetStaticName="22a1ccf5-57cc-4c33-bb82-40db4572a17e" AttributeSetName="TestContent" EntityGUID="ae29ae6f-0f30-49db-95a0-268c48cb95e0">
+      <Value Key="Message" Value="&lt;p&gt;You are seeing the demo content. Once you edit this accordion, this text will disappear and you will be able to add your own content inside this accordion.&lt;/p&gt;&#xA;&lt;p&gt;Take a look at&amp;nbsp;&lt;a href=&quot;https://azing.org/2sxc/l/0SdD61V7/app-accordion&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;these azing checklists&lt;/a&gt;, if you need help.&lt;/p&gt;" Type="String">
+        <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+      <Value Key="Message" Value="&lt;p&gt;Sie sehen zur Zeit Demodaten. Sobald Sie diesen Akkordeon-Abschnitt&amp;nbsp;bearbeiten, verschwindet dieser Text und Sie k&amp;ouml;nnen dann weitere Inhalte in diesem Abschnitt einf&amp;uuml;gen.&amp;nbsp;&lt;/p&gt;&#xA;&lt;p&gt;Schauen Sie sich&amp;nbsp;&lt;a href=&quot;https://azing.org/2sxc/l/0SdD61V7/app-accordion&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;diese azing checklists&lt;/a&gt;&amp;nbsp;an, wenn Sie hilfe ben&amp;ouml;tigen.&lt;/p&gt;" Type="String">
+        <Dimension DimensionID="43" ReadOnly="false" />
+      </Value>
+      <Value Key="Title" Value="Demo Content in the Accordion" Type="String">
+        <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+      <Value Key="Title" Value="Demoinhalt im Accordeon" Type="String">
+        <Dimension DimensionID="43" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-Template" AttributeSetName="2SexyContent-Template" EntityGUID="ce1617bc-5c2b-4d71-9a01-d300bfb008c9" Json="True">
+      <Value Key="ContentDemoEntity" Value="ae29ae6f-0f30-49db-95a0-268c48cb95e0" Type="Entity" />
+      <Value Key="ContentTypeStaticName" Value="22a1ccf5-57cc-4c33-bb82-40db4572a17e" Type="String">
+        <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+      <Value Key="Icon" Value="" Type="Hyperlink">
+        <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+      <Value Key="Identifier" Value="" Type="String">
+        <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+      <Value Key="IsHidden" Value="False" Type="Boolean">
+        <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+      <Value Key="ListContentTypeStaticName" Value="" Type="String">
+        <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+      <Value Key="ListPresentationTypeStaticName" Value="" Type="String">
+        <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+      <Value Key="Location" Value="Site" Type="String">
+        <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+      <Value Key="Name" Value="Content Preview" Type="String">
+        <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+      <Value Key="Path" Value="bs4/_Content-Preview.cshtml" Type="String">
+        <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+      <Value Key="PresentationTypeStaticName" Value="" Type="String">
+        <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+      <Value Key="PublishData" Value="False" Type="Boolean">
+        <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+      <Value Key="SearchIndexingDisabled" Value="False" Type="Boolean">
+        <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+      <Value Key="SearchIndexingStreams" Value="" Type="String">
+        <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+      <Value Key="StreamsToPublish" Value="" Type="String">
+        <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+      <Value Key="Type" Value="C# Razor" Type="String">
+        <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+      <Value Key="UseForList" Value="False" Type="Boolean">
+        <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+      <Value Key="ViewController" Value="" Type="String">
+        <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+      <Value Key="ViewNameInUrl" Value="" Type="String">
+        <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity AssignmentObjectType="Default" AttributeSetStaticName="ContentGroupReference" AttributeSetName="ContentGroupReference" EntityGUID="3a0605aa-a9ec-4a34-b7ca-be5d3520696c" Json="True">
+      <Value Key="App" Value="8b110476-8fda-4d76-9252-e70e2fee6315" Type="String" />
+      <Value Key="Template" Value="ce1617bc-5c2b-4d71-9a01-d300bfb008c9" Type="String" />
+      <Value Key="Title" Value="" Type="String" />
+    </Entity>
+    <Entity AssignmentObjectType="Default" AttributeSetStaticName="ContentGroupReference" AttributeSetName="ContentGroupReference" EntityGUID="ed1c4a6a-e880-455c-be42-ecc44d7e4a98" Json="True">
+      <Value Key="App" Value="8b110476-8fda-4d76-9252-e70e2fee6315" Type="String" />
+      <Value Key="ContentGroup" Value="879e5f01-09d3-4b1e-b51c-e2967e79caa0" Type="String" />
+      <Value Key="Template" Value="ce1617bc-5c2b-4d71-9a01-d300bfb008c9" Type="String" />
+      <Value Key="Title" Value="Demo long content" Type="String" />
+    </Entity>
+    <Entity AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="879e5f01-09d3-4b1e-b51c-e2967e79caa0" Json="True">
+      <Value Key="Content" Value="51b8330f-0754-401d-a43a-e96319dd71c2" Type="Entity" />
+      <Value Key="Presentation" Value="null" Type="Entity" />
+      <Value Key="Template" Value="ce1617bc-5c2b-4d71-9a01-d300bfb008c9" Type="Entity" />
+    </Entity>
+    <Entity AssignmentObjectType="Default" AttributeSetStaticName="22a1ccf5-57cc-4c33-bb82-40db4572a17e" AttributeSetName="TestContent" EntityGUID="51b8330f-0754-401d-a43a-e96319dd71c2">
+      <Value Key="Message" Value="&lt;h2&gt;Demo&lt;/h2&gt;&#xA;&lt;div class=&quot;co-text&quot;&gt;&#xA;&lt;p&gt;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. &amp;nbsp;&amp;nbsp;&lt;/p&gt;&#xA;&lt;p&gt;Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. &amp;nbsp;&amp;nbsp;&lt;/p&gt;&#xA;&lt;p&gt;Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. &amp;nbsp;&amp;nbsp;&lt;/p&gt;&#xA;&lt;p&gt;Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. &amp;nbsp;&amp;nbsp;&lt;/p&gt;&#xA;&lt;p&gt;Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. &amp;nbsp;&amp;nbsp;&lt;/p&gt;&#xA;&lt;p&gt;At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur&lt;/p&gt;&#xA;&lt;/div&gt;" Type="String">
+        <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+      <Value Key="Title" Value="Demo long content" Type="String">
         <Dimension DimensionID="42" ReadOnly="false" />
       </Value>
     </Entity>
