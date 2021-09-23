@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="12.05.00" ExportDate="2021-09-23T14:57:45.1031581+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="12.05.00" ExportDate="2021-09-23T15:03:25.2468685+02:00">
   <Header>
     <App Guid="8b110476-8fda-4d76-9252-e70e2fee6315" />
     <Language Default="en-us" />
@@ -251,9 +251,61 @@
         </Attribute>
         <Attribute StaticName="Message" Type="String" IsTitle="false">
           <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="084041a6-c037-4aa7-bdef-7aba77953cc5" Json="True" KeyNumber="4862">
-            <Value Key="InputType" Value="string-wysiwyg" Type="String" />
-            <Value Key="Name" Value="Messagu" Type="String" />
-            <Value Key="VisibleInEditUI" Value="True" Type="Boolean" />
+            <Value Key="CustomJavaScript" Value="" Type="String">
+              <Dimension DimensionID="42" ReadOnly="false" />
+            </Value>
+            <Value Key="DefaultValue" Value="" Type="String">
+              <Dimension DimensionID="42" ReadOnly="false" />
+            </Value>
+            <Value Key="Disabled" Value="False" Type="Boolean">
+              <Dimension DimensionID="42" ReadOnly="false" />
+            </Value>
+            <Value Key="DisableTranslation" Value="False" Type="Boolean">
+              <Dimension DimensionID="42" ReadOnly="false" />
+            </Value>
+            <Value Key="InputType" Value="string-wysiwyg" Type="String">
+              <Dimension DimensionID="42" ReadOnly="false" />
+            </Value>
+            <Value Key="Name" Value="Message" Type="String">
+              <Dimension DimensionID="42" ReadOnly="false" />
+            </Value>
+            <Value Key="Notes" Value="" Type="String">
+              <Dimension DimensionID="42" ReadOnly="false" />
+            </Value>
+            <Value Key="Placeholder" Value="" Type="String">
+              <Dimension DimensionID="42" ReadOnly="false" />
+            </Value>
+            <Value Key="Required" Value="False" Type="Boolean">
+              <Dimension DimensionID="42" ReadOnly="false" />
+            </Value>
+            <Value Key="ValidationRegExJavaScript" Value="" Type="String">
+              <Dimension DimensionID="42" ReadOnly="false" />
+            </Value>
+            <Value Key="VisibleInEditUI" Value="True" Type="Boolean">
+              <Dimension DimensionID="42" ReadOnly="false" />
+            </Value>
+          </Entity>
+          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@String" AttributeSetName="@String" EntityGUID="415d08bb-b1e8-43c3-ab7c-d746cc6115a2" Json="True" KeyNumber="4862">
+            <Value Key="DropdownValues" Value="" Type="String">
+              <Dimension DimensionID="42" ReadOnly="false" />
+            </Value>
+            <Value Key="InputType" Value="" Type="String">
+              <Dimension DimensionID="42" ReadOnly="false" />
+            </Value>
+          </Entity>
+          <Entity AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@string-wysiwyg" AttributeSetName="@string-wysiwyg" EntityGUID="7ceeebbf-665b-4823-9039-324c650184f5" Json="True" KeyNumber="4862">
+            <Value Key="ButtonAdvanced" Value="" Type="String">
+              <Dimension DimensionID="42" ReadOnly="false" />
+            </Value>
+            <Value Key="ButtonSource" Value="" Type="String">
+              <Dimension DimensionID="42" ReadOnly="false" />
+            </Value>
+            <Value Key="ContentCss" Value="" Type="Hyperlink">
+              <Dimension DimensionID="42" ReadOnly="false" />
+            </Value>
+            <Value Key="Dialog" Value="" Type="String">
+              <Dimension DimensionID="42" ReadOnly="false" />
+            </Value>
           </Entity>
         </Attribute>
       </Attributes>
