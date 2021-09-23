@@ -1,8 +1,8 @@
 @inherits Custom.Hybrid.Razor12
 @using ToSic.Razor.Blade;
 @{
-  var page = GetService<ToSic.Sxc.Web.IPageService>();
-  page.Activate("FontAwesome5"); // see https://r.2sxc.org/turnon
+  // Activate font-Awesome 5 from the global resources and activate https://r.2sxc.org/turnon
+  GetService<ToSic.Sxc.Web.IPageService>().Activate("FontAwesome5", "turnOn");
 }
 
 <link rel="stylesheet" href="@App.Path/bs4/dist/styles.min.css" data-enableoptimizations="true">
