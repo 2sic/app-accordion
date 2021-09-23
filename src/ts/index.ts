@@ -1,4 +1,21 @@
 import { hide, show, toggle } from 'slidetoggle';
+
+var winAny = window as any;
+winAny.appAccordion4 ??= {};
+winAny.appAccordion4.init ??= initAccordion;
+
+// Todo Roman
+// 1. Get init to use turnOn (otherwise Oqtane won't work - https://app-dev.2sxc.org/content-accordion/de-de/)
+//    Ideally pass in the module-id or something, to be sure it initialized the correct thing
+// 2. Fix open/closed icons to the right of the accordion
+// 3. also check todo in CSS 
+// - font name looks fishy
+// - h2 etc. look wrong inside the accordion
+
+function initAccordion(data: any /* todo: if many params, make interface */) {
+  // todo:
+}
+
 document.addEventListener("DOMContentLoaded", (event) => {
 	// get navHight correct scrollposition
 	var navHeight = document.getElementsByTagName('header')[0].offsetHeight;

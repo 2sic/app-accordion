@@ -1,6 +1,6 @@
 <image src="app-icon.png" align="right" width="200px">
 
-# Accordion4 App for DNN (DotNetNuke)
+# Accordion4 App for .net CMSs
 
 > This is a [2sxc](https://2sxc.org) App for [DNN ☢️](https://www.dnnsoftware.com/) and [Oqtane 💧](https://www.oqtane.org/)
 
