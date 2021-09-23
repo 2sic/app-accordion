@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="12.05.00" ExportDate="2021-09-23T14:38:29.0375448+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="12.05.00" ExportDate="2021-09-23T14:54:42.1850999+02:00">
   <Header>
     <App Guid="8b110476-8fda-4d76-9252-e70e2fee6315" />
     <Language Default="en-us" />
@@ -391,8 +391,8 @@
       <Value Key="Title" Value="" Type="String" />
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="c0af0832-1a3c-493b-a1d2-a8aac6e01832" Json="True">
-      <Value Key="Content" Value="null,70e4e39f-e5ba-48cf-879d-7dac1e159442,1c19fdf7-ff8a-454b-a77f-a289055142b4" Type="Entity" />
-      <Value Key="Presentation" Value="null,null,null" Type="Entity" />
+      <Value Key="Content" Value="null,70e4e39f-e5ba-48cf-879d-7dac1e159442,1c19fdf7-ff8a-454b-a77f-a289055142b4,e38df87b-3c62-421e-b0c4-43bfa397389f" Type="Entity" />
+      <Value Key="Presentation" Value="null,null,null,null" Type="Entity" />
       <Value Key="Template" Value="14f785f2-a337-4ac3-ac42-3d19313b0423" Type="Entity" />
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="3937fa17-ef2d-40a7-b089-64164eb10bab" AttributeSetName="2sxcPolymorphismConfiguration" EntityGUID="a5b0c8f6-3ae5-4db9-af97-fe8067a2c0bb" Json="True">
@@ -422,13 +422,14 @@
       <Value Key="Title" Value="Demo" Type="String" />
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="884e65b4-8f1c-4bc9-897f-147dcabeb941" AttributeSetName="Accordion" EntityGUID="1c19fdf7-ff8a-454b-a77f-a289055142b4">
-      <Value Key="Icon" Value="" Type="String">
+      <Value Key="DesignedContent" Value="5e0f7e4a-7761-495d-9443-aa897f785f7e" Type="Entity" />
+      <Value Key="Icon" Value="fa-adjust" Type="String">
         <Dimension DimensionID="42" ReadOnly="false" />
       </Value>
-      <Value Key="InitiallyExpanded" Value="False" Type="Boolean">
+      <Value Key="InitiallyExpanded" Value="True" Type="Boolean">
         <Dimension DimensionID="42" ReadOnly="false" />
       </Value>
-      <Value Key="Title" Value="Test for Innercontent" Type="String">
+      <Value Key="Title" Value="Example with initially expanded" Type="String">
         <Dimension DimensionID="42" ReadOnly="false" />
       </Value>
     </Entity>
@@ -483,7 +484,7 @@
       <Value Key="Identifier" Value="" Type="String">
         <Dimension DimensionID="42" ReadOnly="false" />
       </Value>
-      <Value Key="IsHidden" Value="False" Type="Boolean">
+      <Value Key="IsHidden" Value="True" Type="Boolean">
         <Dimension DimensionID="42" ReadOnly="false" />
       </Value>
       <Value Key="ListContentTypeStaticName" Value="" Type="String">
@@ -552,6 +553,22 @@
       <Value Key="Title" Value="Demo long content" Type="String">
         <Dimension DimensionID="42" ReadOnly="false" />
       </Value>
+    </Entity>
+    <Entity AssignmentObjectType="Default" AttributeSetStaticName="884e65b4-8f1c-4bc9-897f-147dcabeb941" AttributeSetName="Accordion" EntityGUID="e38df87b-3c62-421e-b0c4-43bfa397389f">
+      <Value Key="Icon" Value="fa-battery-empty" Type="String">
+        <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+      <Value Key="InitiallyExpanded" Value="False" Type="Boolean">
+        <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+      <Value Key="Title" Value="Example which is still empty" Type="String">
+        <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity AssignmentObjectType="Default" AttributeSetStaticName="ContentGroupReference" AttributeSetName="ContentGroupReference" EntityGUID="5e0f7e4a-7761-495d-9443-aa897f785f7e" Json="True">
+      <Value Key="App" Value="8b110476-8fda-4d76-9252-e70e2fee6315" Type="String" />
+      <Value Key="Template" Value="ce1617bc-5c2b-4d71-9a01-d300bfb008c9" Type="String" />
+      <Value Key="Title" Value="" Type="String" />
     </Entity>
   </Entities>
   <PortalFiles />
