@@ -5,10 +5,10 @@ winAny.appAccordion4 ??= {};
 winAny.appAccordion4.init ??= initAccordion;
 
 function initAccordion({ domId } : { domId: string }) {
-	// get navHight correct scrollposition
+	// get navHight for correct scrollposition
 	var nav = document.getElementsByTagName('header')[0];
 	var navHeight = (nav != null ? nav.offsetHeight : 0);
-	console.log(navHeight)
+
 	// attach click to all accordions when loading
 	var accordionOpener = document.querySelectorAll('.app-accordion4-title');
 
