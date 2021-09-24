@@ -18,7 +18,9 @@ An accordion app often used to collapse blocks of content - ideal for mobile sit
 | App Catalog         | ✅    | See [app catalog](https://2sxc.org/en/apps/app/accordion-v3-for-2sxc)
 | Screenshots         | ✅    | See [app catalog](https://2sxc.org/en/apps/app/accordion-v3-for-2sxc)
 | Best Practices      | ✅    | Uses v12.05 conventions
-| Bootstrap 3, 4, 5   | ✅    |
+| Bootstrap 3         | ✅    |
+| Bootstrap 4         | ✅    |
+| Bootstrap 5         | ✔️    | Works well, but not optimized
 
 ## Customize the app
 
