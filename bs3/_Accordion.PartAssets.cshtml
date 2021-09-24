@@ -2,8 +2,9 @@
 @using ToSic.Razor.Blade;
 @{
   var page = GetService<ToSic.Sxc.Web.IPageService>();
-  page.Activate("FontAwesome5"); // see https://r.2sxc.org/turnon
+  page.Activate("FontAwesome5", "turnOn"); // see https://r.2sxc.org/turnon
 }
 
+<turnOn turn-on='{ "run": "window.appAccordion4.init()", "data": { "domId": "@DynamicModel.DomId" } }'></turnOn>
 <link rel="stylesheet" href="@App.Path/bs3/dist/styles.min.css" data-enableoptimizations="true">
 <script src="@App.Path/bs3/dist/scripts.min.js" data-enableoptimizations="false"></script>
