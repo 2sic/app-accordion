@@ -4,7 +4,7 @@
 
 <div class="app-accordion4-wrapper" @Edit.Attribute("quick-edit-config", new { modules = new {  enable = true }})>
   @foreach (var accord in AsList(Data)) {
-    var initiallyExpanded = accord.InitiallyExpanded ?? false;
+    var initiallyExpanded = Convert.ToBool(accord.InitiallyExpanded);
     var hasIcon = Text.Has(accord.Icon); 
 
     <div class='app-accordion4-item @(initiallyExpanded ? "active" : "")' @Edit.TagToolbar(accord)>
