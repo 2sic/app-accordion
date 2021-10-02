@@ -1,4 +1,4 @@
-<image src="app-icon.png" align="right" width="200px">
+<img src="app-icon.png" align="right" width="200px">
 
 # Accordion4 App for .net CMSs
 
