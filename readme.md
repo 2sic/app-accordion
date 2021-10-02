@@ -22,7 +22,7 @@ An accordion app often used to collapse blocks of content - ideal for mobile sit
 | Bootstrap 4         | ✅    |
 | Bootstrap 5         | ✔️    | Works well, but not optimized
 
-## Customize the app
+## Customize the App
 
 The Accordion App does not have any app settings and just a few one app resource(label) you can customize.
 
