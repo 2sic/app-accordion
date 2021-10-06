@@ -30,10 +30,10 @@
       }
 
     }
-    &.active {
+    &.is-expanded {
       border: none;
     }
-    &.active {
+    &.is-expanded {
       > svg {
         background: $gray-200;  
 

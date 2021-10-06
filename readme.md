@@ -34,3 +34,5 @@ If you want to customize the CSS, you will usually follow the ["Create Custom St
     * Latest best-practices of 2sxc 12.05
     * clear/full separation of bs3/bs4
     * moved icons css to Icons folder
+
+TODO: @2ro - standardize code of accordions across apps
