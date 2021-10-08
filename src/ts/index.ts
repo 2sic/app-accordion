@@ -1,4 +1,4 @@
-import { initAccordion } from './lib-2sxc-accordion';
+import { initAccordion } from './accordion/lib-2sxc-accordion';
 
 var winAny = window as any;
 winAny.appAccordion4 ??= {};
