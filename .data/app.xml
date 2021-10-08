@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="12.05.00" ExportDate="2021-09-23T15:03:25.2468685+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="12.05.00" ExportDate="2021-10-08T13:05:09.8824444+02:00">
   <Header>
     <App Guid="8b110476-8fda-4d76-9252-e70e2fee6315" />
     <Language Default="en-us" />
@@ -334,10 +334,10 @@
       <Value Key="Hidden" Value="False" Type="Boolean">
         <Dimension DimensionID="42" ReadOnly="false" />
       </Value>
-      <Value Key="OriginalId" Value="d2365022-78f5-42fc-8bf5-9b9558a9af3a" Type="String">
+      <Value Key="OriginalId" Value="" Type="String">
         <Dimension DimensionID="42" ReadOnly="false" />
       </Value>
-      <Value Key="RequiredDnnVersion" Value="07.02.00" Type="String">
+      <Value Key="RequiredDnnVersion" Value="07.04.02" Type="String">
         <Dimension DimensionID="42" ReadOnly="false" />
       </Value>
       <Value Key="RequiredOqtaneVersion" Value="02.02.00" Type="String">
@@ -475,7 +475,7 @@
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="884e65b4-8f1c-4bc9-897f-147dcabeb941" AttributeSetName="Accordion" EntityGUID="1c19fdf7-ff8a-454b-a77f-a289055142b4">
       <Value Key="DesignedContent" Value="5e0f7e4a-7761-495d-9443-aa897f785f7e" Type="Entity" />
-      <Value Key="Icon" Value="fa-adjust" Type="String">
+      <Value Key="Icon" Value=" fa-adjust" Type="String">
         <Dimension DimensionID="42" ReadOnly="false" />
       </Value>
       <Value Key="InitiallyExpanded" Value="True" Type="Boolean">
