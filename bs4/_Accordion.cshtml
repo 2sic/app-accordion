@@ -6,6 +6,7 @@
   @foreach (var accord in AsList(Data)) {
     var initiallyExpanded = Convert.ToBool(accord.InitiallyExpanded, fallback: false);
     var hasIcon = Text.Has(accord.Icon); 
+    var render = GetService<ToSic.Sxc.Blocks.IRenderService>();
 
     <div class='app-accordion4-item @(initiallyExpanded ? "is-expanded" : "")' @Edit.TagToolbar(accord)>
       <div class='app-accordion4-title' data-accordion-parent="@accord.EntityId">
@@ -29,7 +30,7 @@
       } else {
         <div class='app-accordion4-content sc-content-block-list @(initiallyExpanded ? "is-expanded" : "")' @Edit.ContextAttributes(accord, field: "DesignedContent") data-accordion-child="@accord.EntityId">
           @foreach (var designedContent in accord.DesignedContent) {
-            @Render.One(designedContent);
+            @render.One(designedContent);
           }
         </div>
       }
