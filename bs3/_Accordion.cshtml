@@ -1,5 +1,8 @@
 @inherits Custom.Hybrid.Razor12
 @using ToSic.Razor.Blade;
+@{
+  var render = GetService<ToSic.Sxc.Blocks.IRenderService>();
+}
 
 <div class="co-container-outer">
   <div class="co-container-inner app-accordion4-wrapper" @Edit.Attribute("quick-edit-config", new { modules = new {  enable = true }})>
@@ -27,7 +30,7 @@
             @Html.Raw(Resources.DemoItemMessage)
           } else {
             foreach (var designedContent in accord.DesignedContent) {
-              @ToSic.Sxc.Blocks.Render.One(designedContent);
+              @render.One(designedContent);
             }
           }
         </div>
