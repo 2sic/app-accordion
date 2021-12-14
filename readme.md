@@ -20,7 +20,7 @@ An accordion app often used to collapse blocks of content - ideal for mobile sit
 | Best Practices      | ✅    | Uses v12.05 conventions
 | Bootstrap 3         | ✅    |
 | Bootstrap 4         | ✅    |
-| Bootstrap 5         | ✔️    | Works well, but not optimized
+| Bootstrap 5         | ✅    |
 
 ## Customize the App
 
