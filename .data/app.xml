@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="13.00.00" ExportDate="2021-12-14T16:33:53.9086583+01:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="13.00.01" ExportDate="2022-01-05T08:03:27.581367+01:00">
   <Header>
     <App Guid="8b110476-8fda-4d76-9252-e70e2fee6315" />
     <Language Default="en-us" />
@@ -349,7 +349,7 @@
       <Value Key="SupportsAjaxReload" Value="False" Type="Boolean">
         <Dimension DimensionID="42" ReadOnly="false" />
       </Value>
-      <Value Key="Version" Value="04.01.00" Type="String">
+      <Value Key="Version" Value="04.01.01" Type="String">
         <Dimension DimensionID="42" ReadOnly="false" />
       </Value>
     </Entity>
@@ -622,6 +622,7 @@
       <Value Key="Template" Value="ce1617bc-5c2b-4d71-9a01-d300bfb008c9" Type="String" />
       <Value Key="Title" Value="" Type="String" />
     </Entity>
+    <Entity AssignmentObjectType="Entity" AttributeSetStaticName="529ba3a2-d7d4-4f40-a81b-ff819de03a9e" AttributeSetName="IsDefaultDecorator" EntityGUID="a46e66cd-2fde-4b3e-8756-d0a7a8565040" Json="True" KeyGuid="14f785f2-a337-4ac3-ac42-3d19313b0423" />
   </Entities>
   <PortalFiles />
   <PortalFolders>
