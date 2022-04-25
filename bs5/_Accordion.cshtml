@@ -15,14 +15,14 @@
           @accord.Title
         </button>
       </h2>
-      <div id="a-@accord.EntityId" class='accordion-collapse collapse @(initiallyExpanded ? "show" : "")' aria-labelledby="headingOne">
+      <div id="a-@accord.EntityId" class='accordion-collapse collapse @(initiallyExpanded ? "show" : "")' aria-labelledby="a-@accord.EntityId">
         <div class="accordion-body">
           @if (accord.IsDemoItem) {
-            <div class='app-accordion4-content' data-accordion-child="@accord.EntityId">
+            <div data-accordion-child="@accord.EntityId">
               @Html.Raw(Resources.DemoItemMessage)
             </div>
           } else {
-            <div class='app-accordion4-content sc-content-block-list @(initiallyExpanded ? "show" : "")' @Edit.ContextAttributes(accord, field: "DesignedContent") data-accordion-child="@accord.EntityId">
+            <div class='sc-content-block-list @(initiallyExpanded ? "show" : "")' @Edit.ContextAttributes(accord, field: "DesignedContent") data-accordion-child="@accord.EntityId">
               @foreach (var designedContent in accord.DesignedContent) {
                 @render.One(designedContent);
               }
