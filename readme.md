@@ -35,3 +35,6 @@ If you want to customize the CSS, you will usually follow the ["Create Custom St
     * clear/full separation of bs3/bs4
     * moved icons css to Icons folder
     * no more jQuery
+* v4.02 2022-04 
+    * Bootstrap5 accordion 
+    * Moved access to services to ToSic.Sxc.Services

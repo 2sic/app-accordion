@@ -1,7 +1,8 @@
 @inherits Custom.Hybrid.Razor12
 @using ToSic.Razor.Blade;
+@using ToSic.Sxc.Services;
 @{
-  var render = GetService<ToSic.Sxc.Blocks.IRenderService>();
+  var render = GetService<IRenderService>();
 }
 
 <div class="co-container-outer">
