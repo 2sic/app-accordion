@@ -24,5 +24,5 @@
 }
 
 <turnOn turn-on='{ "run": "window.appAccordion4.initBs5()", "data": { "domId": "@DynamicModel.DomId", "options": @jsonOptions }}'></turnOn>
-<script src="@App.Path/bs5/dist/scripts.min.js" page.AssetAttributes()></script>
-<link rel="stylesheet" href="@App.Path/bs5/dist/styles.min.css" page.AssetAttributes()>
+<script src="@App.Path/bs5/dist/scripts.min.js" @(page.AssetAttributes())></script>
+<link rel="stylesheet" href="@App.Path/bs5/dist/styles.min.css" @(page.AssetAttributes())>
