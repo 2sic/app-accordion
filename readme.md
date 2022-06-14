@@ -38,3 +38,5 @@ If you want to customize the CSS, you will usually follow the ["Create Custom St
 * v4.02 2022-04 
     * Bootstrap5 accordion 
     * Moved access to services to ToSic.Sxc.Services
+* v4.02.01 2022-06
+    * Improvements BS3, BS4, BS5 accordion

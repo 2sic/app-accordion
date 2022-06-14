@@ -1,8 +1,11 @@
 @inherits Custom.Hybrid.Razor12
 @using ToSic.Razor.Blade;
 @using ToSic.Sxc.Services;
+@{
+  var domId = "app-accordion4-" + CmsContext.Module.Id;
+}
 
-<div class="app-accordion4-wrapper accordion accordion-flush" @Edit.Attribute("quick-edit-config", new { modules = new {  enable = true }})>
+<div class="app-accordion4-wrapper accordion accordion-flush" @domId @Edit.Attribute("quick-edit-config", new { modules = new {  enable = true }})>
   @foreach (var accord in AsList(Data)) {
     var initiallyExpanded = Convert.ToBool(accord.InitiallyExpanded, fallback: false);
     var hasIcon = Text.Has(accord.Icon); 
@@ -34,4 +37,4 @@
   }
 </div>
 
-@Html.Partial("_Accordion.PartAssets.cshtml")
+@Html.Partial("_Accordion.PartAssets.cshtml", new { DomId = domId })

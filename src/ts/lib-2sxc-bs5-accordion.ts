@@ -17,8 +17,10 @@ export function initAccordionBs5({ domId, options } : { domId: string, options: 
   var nav = (document.getElementsByTagName(options.tagStickyHeader)[0] as HTMLElement);
   var navHeight = (nav != null ? nav.offsetHeight : 0);
 
+  let accordionWrapper = document.querySelector(`[${domId}]`)
+
   // attach click to all accordions when loading
-  var accordionOpener = document.querySelectorAll(`[${options.attrParent}]`);
+  var accordionOpener = accordionWrapper.querySelectorAll(`[${options.attrParent}]`);
 
   accordionOpener.forEach((elem: HTMLElement) => {	
     elem.addEventListener('click', (event) => {
@@ -34,8 +36,8 @@ export function initAccordionBs5({ domId, options } : { domId: string, options: 
   // get hash from url and open specific item
   if(window.location.hash){
     const hash = window.location.hash;
-    const targetButton = document.querySelector(`[${options.attrParent}="${hash}"]`);
-    const targetContent = document.querySelector(hash);
+    const targetButton = accordionWrapper.querySelector(`[${options.attrParent}="${hash}"]`);
+    const targetContent = accordionWrapper.querySelector(hash);
     
     // if target element exists scroll to element and open it
     if(targetButton && targetContent){
