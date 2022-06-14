@@ -1,4 +1,4 @@
-import { hide, show, toggle } from 'slidetoggle';
+import { show, toggle } from 'slidetoggle';
 import { AccordionOptions } from './lib-2sxc-accordion-options';
 
 /*
@@ -22,13 +22,13 @@ export function initAccordion({ domId, options } : { domId: string, options: Acc
   // attach click to all accordions when loading
   var accordionOpener = accordionWrapper.querySelectorAll(`[${options.attrParent}]`);
 
-  accordionOpener.forEach((elem: HTMLElement, index) => {	
+  accordionOpener.forEach((elem: HTMLElement) => {	
     elem.addEventListener('click', (event) => {
       event.preventDefault();
 
       const currentElem = event.currentTarget as HTMLElement;
-      const hash = currentElem.dataset.accordionParent;
-      const parent = currentElem.parentElement;	
+      const hash = currentElem.dataset.accordionParent.replace('#', '');
+      const parent = currentElem.parentElement;
       const targetOpenElem = accordionWrapper.querySelector(`[${options.attrChild}="${hash}"]`) as HTMLElement;		
 
       // add hash to url

@@ -13,19 +13,19 @@
 
     <div class="accordion-item" @Edit.TagToolbar(accord)>
       <h2 class="accordion-header" id="headingOne">
-        <button class='accordion-button @(initiallyExpanded ? "" : "collapsed")' type="button" data-bs-toggle="collapse" data-bs-target="#a-@accord.EntityId" aria-expanded="true" aria-controls="a-@accord.EntityId">
+        <button class='accordion-button @(initiallyExpanded ? "" : "collapsed")' type="button" data-bs-toggle="collapse" data-bs-target="#a-@CmsContext.Module.Id-@accord.EntityId" aria-expanded="true" aria-controls="a-@accord.EntityId">
           @if (hasIcon) { <span><i class="me-3 co-icon fas @accord.Icon" aria-hidden="true"></i></span> }
           @accord.Title
         </button>
       </h2>
-      <div id="a-@accord.EntityId" class='accordion-collapse collapse @(initiallyExpanded ? "show" : "")' aria-labelledby="a-@accord.EntityId">
+      <div id="a-@CmsContext.Module.Id-@accord.EntityId" class='accordion-collapse collapse @(initiallyExpanded ? "show" : "")' aria-labelledby="a-@CmsContext.Module.Id-@accord.EntityId">
         <div class="accordion-body">
           @if (accord.IsDemoItem) {
-            <div data-accordion-child="@accord.EntityId">
+            <div data-accordion-child="@CmsContext.Module.Id-@accord.EntityId">
               @Html.Raw(Resources.DemoItemMessage)
             </div>
           } else {
-            <div class='sc-content-block-list @(initiallyExpanded ? "show" : "")' @Edit.ContextAttributes(accord, field: "DesignedContent") data-accordion-child="@accord.EntityId">
+            <div class='sc-content-block-list @(initiallyExpanded ? "show" : "")' @Edit.ContextAttributes(accord, field: "DesignedContent") data-accordion-child="@CmsContext.Module.Id-@accord.EntityId">
               @foreach (var designedContent in accord.DesignedContent) {
                 @render.One(designedContent);
               }
