@@ -1,17 +1,15 @@
-@inherits Custom.Hybrid.Razor12
+@inherits Custom.Hybrid.Razor14
 @using ToSic.Razor.Blade;
-@using ToSic.Sxc.Services;
 @{
   var domId = "app-accordion4-" + CmsContext.Module.Id;
 }
 
 <div class="app-accordion4-wrapper" @domId @Edit.Attribute("quick-edit-config", new { modules = new {  enable = true }})>
   @foreach (var accord in AsList(Data)) {
-    var initiallyExpanded = Convert.ToBool(accord.InitiallyExpanded, fallback: false);
+    var initiallyExpanded = Kit.Convert.ToBool(accord.InitiallyExpanded, fallback: false);
     var hasIcon = Text.Has(accord.Icon); 
-    var render = GetService<IRenderService>();
 
-    <div class='app-accordion4-item @(initiallyExpanded ? "is-expanded" : "")' @Edit.TagToolbar(accord)>
+    <div class='app-accordion4-item @(initiallyExpanded ? "is-expanded" : "")' @Kit.Toolbar.Default().For(accord)>
       <div class='app-accordion4-title' data-accordion-parent="#a-@CmsContext.Module.Id-@accord.EntityId">
         <h2 class='@(hasIcon ? "" : "co-no-icon")'>
           @if (hasIcon) {
@@ -33,7 +31,7 @@
       } else {
         <div class='app-accordion4-content sc-content-block-list @(initiallyExpanded ? "is-expanded" : "")' @Edit.ContextAttributes(accord, field: "DesignedContent") data-accordion-child="a-@CmsContext.Module.Id-@accord.EntityId">
           @foreach (var designedContent in accord.DesignedContent) {
-            @render.One(designedContent);
+            @Kit.Render.One(designedContent);
           }
         </div>
       }

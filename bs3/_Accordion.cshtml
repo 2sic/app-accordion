@@ -1,8 +1,6 @@
-@inherits Custom.Hybrid.Razor12
+@inherits Custom.Hybrid.Razor14
 @using ToSic.Razor.Blade;
-@using ToSic.Sxc.Services;
 @{
-  var render = GetService<IRenderService>();
   var domId = "app-accordion4-" + CmsContext.Module.Id;
 }
 
@@ -11,7 +9,7 @@
     @foreach (var accord in AsList(Data)) {
       var initiallyExpanded = accord.InitiallyExpanded ?? false;
 
-      <div class="app-accordion4-item" @Edit.TagToolbar(accord)>
+      <div class="app-accordion4-item" @Kit.Toolbar.Default().For(accord)>
         <div class='app-accordion4-title @(initiallyExpanded ? "is-expanded" : "")' data-accordion-parent="#a-@CmsContext.Module.Id-@accord.EntityId">
           <h2 class='@(Text.Has(accord.Icon) ? "" : "co-no-icon")'>
             @if (Text.Has(accord.Icon)) {
@@ -33,7 +31,7 @@
         } else {
           <div class='app-accordion4-content sc-content-block-list @(initiallyExpanded ? "is-expanded" : "")' @Edit.ContextAttributes(accord, field: "DesignedContent") data-accordion-child="a-@CmsContext.Module.Id-@accord.EntityId">
             @foreach (var designedContent in accord.DesignedContent) {
-              @render.One(designedContent);
+              @Kit.Render.One(designedContent);
             }
           </div>
         }

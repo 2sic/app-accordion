@@ -1,17 +1,15 @@
-@inherits Custom.Hybrid.Razor12
+@inherits Custom.Hybrid.Razor14
 @using ToSic.Razor.Blade;
-@using ToSic.Sxc.Services;
 @{
   var domId = "app-accordion4-" + CmsContext.Module.Id;
 }
 
 <div class="app-accordion4-wrapper accordion accordion-flush" @domId @Edit.Attribute("quick-edit-config", new { modules = new {  enable = true }})>
   @foreach (var accord in AsList(Data)) {
-    var initiallyExpanded = Convert.ToBool(accord.InitiallyExpanded, fallback: false);
+    var initiallyExpanded = Kit.Convert.ToBool(accord.InitiallyExpanded, fallback: false);
     var hasIcon = Text.Has(accord.Icon); 
-    var render = GetService<IRenderService>();
 
-    <div class="accordion-item" @Edit.TagToolbar(accord)>
+    <div class="accordion-item" @Kit.Toolbar.Default().For(accord)>
       <h2 class="accordion-header" id="headingOne">
         <button class='accordion-button @(initiallyExpanded ? "" : "collapsed")' type="button" data-bs-toggle="collapse" data-bs-target="#a-@CmsContext.Module.Id-@accord.EntityId" aria-expanded="true" aria-controls="a-@accord.EntityId">
           @if (hasIcon) { <span><i class="me-3 co-icon fas @accord.Icon" aria-hidden="true"></i></span> }
@@ -27,7 +25,7 @@
           } else {
             <div class='sc-content-block-list @(initiallyExpanded ? "show" : "")' @Edit.ContextAttributes(accord, field: "DesignedContent") data-accordion-child="@CmsContext.Module.Id-@accord.EntityId">
               @foreach (var designedContent in accord.DesignedContent) {
-                @render.One(designedContent);
+                @Kit.Render.One(designedContent);
               }
             </div>
           }
