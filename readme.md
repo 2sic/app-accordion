@@ -35,12 +35,12 @@ If you want to customize the CSS, you will usually follow the ["Create Custom St
     * clear/full separation of bs3/bs4
     * moved icons css to Icons folder
     * no more jQuery
-* v4.02 2022-04 
+* v4.01 2022-04 
     * Bootstrap5 accordion 
     * Moved access to services to ToSic.Sxc.Services
-* v4.02.01 2022-06
+* v4.01.01 2022-06
     * Improvements BS3, BS4, BS5 accordion
-* v4.03.00
+* v4.02.00
     * Replaced all base classes with their new sxc14 equivalents
     * Removed all GetService<> and switched to using the new ServiceKit14
     * Changed all Toolbars to use the new IToolbarService
