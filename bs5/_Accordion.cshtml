@@ -10,7 +10,7 @@
     var hasIcon = Text.Has(accord.Icon); 
 
     <div class="accordion-item" @Kit.Toolbar.Default().For(accord)>
-      <h2 class="accordion-header" id="headingOne">
+      <h2 class="accordion-header" id="a-@accord.EntityId">
         <button class='accordion-button @(initiallyExpanded ? "" : "collapsed")' type="button" data-bs-toggle="collapse" data-bs-target="#a-@CmsContext.Module.Id-@accord.EntityId" aria-expanded="true" aria-controls="a-@accord.EntityId">
           @if (hasIcon) { <span><i class="me-3 co-icon fas @accord.Icon" aria-hidden="true"></i></span> }
           @accord.Title
