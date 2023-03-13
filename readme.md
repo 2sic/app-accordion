@@ -8,7 +8,7 @@ An accordion app often used to collapse blocks of content - ideal for mobile sit
 
 | Aspect              | Status | Comments or Version |
 | ------------------- | :----: | ------------------- |
-| 2sxc                | ✅    | requires 2sxc v12.05
+| 2sxc                | ✅    | requires 2sxc v15.04
 | Dnn                 | ✅    | For v7, v8 and v9
 | Oqtane 2            | ✅    | Requires v2.02
 | No jQuery           | ✅    | 
@@ -30,17 +30,21 @@ If you want to customize the CSS, you will usually follow the ["Create Custom St
 
 ## History
 
-* v4 2021-09
+* v.4 2021-09
     * Latest best-practices of 2sxc 12.05
     * clear/full separation of bs3/bs4
     * moved icons css to Icons folder
     * no more jQuery
-* v4.02 2022-04 
+* v.4.02 2022-04 
     * Bootstrap5 accordion 
     * Moved access to services to ToSic.Sxc.Services
-* v4.02.01 2022-06
+* v.4.02.01 2022-06
     * Improvements BS3, BS4, BS5 accordion
-* v4.03.00
+* v.4.03.00
     * Replaced all base classes with their new sxc14 equivalents
     * Removed all GetService<> and switched to using the new ServiceKit14
     * Changed all Toolbars to use the new IToolbarService
+* v.04.04.00 2023-03
+    * Replaced turnOn Tag with `Kit.Page.TurnOn`
+    * Removed _ from Filenames
+    * Code in one file the bs5, less duplicated code

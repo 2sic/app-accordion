@@ -2,17 +2,23 @@
 @using ToSic.Razor.Blade;
 @{
   var domId = "app-accordion4-" + CmsContext.Module.Id;
+  // query whether BS5 or BS4 for Class
+  var isBs5 = Kit.Css.Is("bs5");
 }
 
 <div class="app-accordion4-wrapper accordion accordion-flush" @domId @Edit.Attribute("quick-edit-config", new { modules = new {  enable = true }})>
   @foreach (var accord in AsList(Data)) {
     var initiallyExpanded = Kit.Convert.ToBool(accord.InitiallyExpanded, fallback: false);
     var hasIcon = Text.Has(accord.Icon); 
+    // Class for BS5 or BS4      
+    var bsToggleAttr = isBs5 ? "data-bs-toggle" : "data-toggle";
+    var bsTargetAttr = isBs5 ? "data-bs-target" : "data-target";
+    var marginRight = isBs5 ? "me-3" : "mr-3";
 
     <div class="accordion-item" @Kit.Toolbar.Default().For(accord)>
       <h2 class="accordion-header" id="a-@accord.EntityId">
-        <button class='accordion-button @(initiallyExpanded ? "" : "collapsed")' type="button" data-bs-toggle="collapse" data-bs-target="#a-@CmsContext.Module.Id-@accord.EntityId" aria-expanded="true" aria-controls="a-@accord.EntityId">
-          @if (hasIcon) { <span><i class="me-3 co-icon fas @accord.Icon" aria-hidden="true"></i></span> }
+        <button class='accordion-button @(initiallyExpanded ? "" : "collapsed")' type="button"  @bsToggleAttr="collapse" @bsTargetAttr="#a-@CmsContext.Module.Id-@accord.EntityId" aria-expanded="true" aria-controls="a-@accord.EntityId">
+          @if (hasIcon) { <span><i class="@marginRight co-icon fas @accord.Icon" aria-hidden="true"></i></span> }
           @accord.Title
         </button>
       </h2>
@@ -35,6 +41,4 @@
   }
 </div>
 
-@Html.Partial("Accordion.PartAssets.cshtml", new { DomId = domId })
-
-@* grosser Unterschied Accordion Gleich wie im FAQ  *@
+@Html.Partial("Assets.cshtml", new { DomId = domId })
