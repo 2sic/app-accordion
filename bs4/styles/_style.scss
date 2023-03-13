@@ -7,6 +7,11 @@
     padding: 1rem 1.25rem;
   }
 
+  .accordion-item {
+    background-color: #fff;
+    border-bottom: 1px solid rgba($secondary, 0.3) !important;
+  }
+
   .accordion-button {
     position: relative;
     display: flex;
@@ -18,7 +23,6 @@
     text-align: left;
     background-color: #fff;
     border: 0 !important;
-    border-bottom: 1px solid rgba($secondary, 0.3) !important;
     overflow-anchor: none;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
       box-shadow 0.15s ease-in-out, border-radius 0.15s ease;
