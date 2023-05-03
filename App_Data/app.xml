@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="14.09.00" ExportDate="2022-09-21T08:39:16.7451602+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="16.00.00" ExportDate="2023-05-03T14:56:09.1633382+02:00">
   <Header>
     <App Guid="8b110476-8fda-4d76-9252-e70e2fee6315" />
     <Language Default="en-us" />
@@ -9,7 +9,7 @@
     </Dimensions>
   </Header>
   <AttributeSets>
-    <AttributeSet StaticName="884e65b4-8f1c-4bc9-897f-147dcabeb941" Name="Accordion" Description="Accordion section" Scope="Default" AlwaysShareConfiguration="false">
+    <AttributeSet StaticName="884e65b4-8f1c-4bc9-897f-147dcabeb941" Name="Accordion" Scope="Default" AlwaysShareConfiguration="false">
       <Attributes>
         <Attribute StaticName="Title" Type="String" IsTitle="true">
           <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="efa399ae-1451-47f6-ab8b-d2c2ce6e8478" Json="True" KeyNumber="988">
@@ -204,7 +204,7 @@
         </Attribute>
       </Attributes>
     </AttributeSet>
-    <AttributeSet StaticName="App-Resources" Name="App-Resources" Description="Stores resources like translations for an app" Scope="System.App" AlwaysShareConfiguration="false">
+    <AttributeSet StaticName="App-Resources" Name="App-Resources" Scope="System.App" AlwaysShareConfiguration="false">
       <Attributes>
         <Attribute StaticName="DemoItemMessage" Type="String" IsTitle="true">
           <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="cda4fc9e-806f-4ff7-9df1-c3dfd8cda879" Json="True" KeyNumber="1053">
@@ -237,10 +237,10 @@
         </Attribute>
       </Attributes>
     </AttributeSet>
-    <AttributeSet StaticName="App-Settings" Name="App-Settings" Description="Stores settings for an app" Scope="System.App" AlwaysShareConfiguration="false">
+    <AttributeSet StaticName="App-Settings" Name="App-Settings" Scope="System.App" AlwaysShareConfiguration="false">
       <Attributes />
     </AttributeSet>
-    <AttributeSet StaticName="22a1ccf5-57cc-4c33-bb82-40db4572a17e" Name="TestContent" Description="" Scope="TestData" AlwaysShareConfiguration="false">
+    <AttributeSet StaticName="22a1ccf5-57cc-4c33-bb82-40db4572a17e" Name="TestContent" Scope="TestData" AlwaysShareConfiguration="false">
       <Attributes>
         <Attribute StaticName="Title" Type="String" IsTitle="true">
           <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="d0365251-4d5a-4218-9987-1ade47bf7710" Json="True" KeyNumber="4861">
@@ -343,13 +343,13 @@
       <Value Key="RequiredOqtaneVersion" Value="3.1" Type="String">
         <Dimension DimensionID="42" ReadOnly="false" />
       </Value>
-      <Value Key="RequiredVersion" Value="14.09.00" Type="String">
+      <Value Key="RequiredVersion" Value="15.04.00" Type="String">
         <Dimension DimensionID="42" ReadOnly="false" />
       </Value>
       <Value Key="SupportsAjaxReload" Value="True" Type="Boolean">
         <Dimension DimensionID="42" ReadOnly="false" />
       </Value>
-      <Value Key="Version" Value="04.03.01" Type="String">
+      <Value Key="Version" Value="04.04.00 " Type="String">
         <Dimension DimensionID="42" ReadOnly="false" />
       </Value>
     </Entity>
@@ -406,7 +406,7 @@
       <Value Key="Name" Value="Akkordeon" Type="String">
         <Dimension DimensionID="43" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="bs4/_Accordion.cshtml" Type="String">
+      <Value Key="Path" Value="bs5/Accordion.cshtml" Type="String">
         <Dimension DimensionID="42" ReadOnly="false" />
       </Value>
       <Value Key="PresentationTypeStaticName" Value="" Type="String">
@@ -551,7 +551,7 @@
       <Value Key="Name" Value="Content Preview" Type="String">
         <Dimension DimensionID="42" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="shared/_Content-Preview.cshtml" Type="String">
+      <Value Key="Path" Value="shared/Content-Preview.cshtml" Type="String">
         <Dimension DimensionID="42" ReadOnly="false" />
       </Value>
       <Value Key="PresentationTypeStaticName" Value="" Type="String">
@@ -584,6 +584,7 @@
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="ContentGroupReference" AttributeSetName="ContentGroupReference" EntityGUID="3a0605aa-a9ec-4a34-b7ca-be5d3520696c" Json="True">
       <Value Key="App" Value="8b110476-8fda-4d76-9252-e70e2fee6315" Type="String" />
+      <Value Key="ContentGroup" Value="b2fc8df4-e7de-4fdd-848b-9f082728ef02" Type="String" />
       <Value Key="Template" Value="ce1617bc-5c2b-4d71-9a01-d300bfb008c9" Type="String" />
       <Value Key="Title" Value="" Type="String" />
     </Entity>
@@ -623,6 +624,42 @@
       <Value Key="Title" Value="" Type="String" />
     </Entity>
     <Entity TargetType="4" AssignmentObjectType="Entity" AttributeSetStaticName="529ba3a2-d7d4-4f40-a81b-ff819de03a9e" AttributeSetName="IsDefaultDecorator" EntityGUID="a46e66cd-2fde-4b3e-8756-d0a7a8565040" Json="True" KeyGuid="14f785f2-a337-4ac3-ac42-3d19313b0423" />
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="ContentGroupReference" AttributeSetName="ContentGroupReference" EntityGUID="ebceb126-2aab-4db8-bce8-4e50eff74738" Json="True">
+      <Value Key="App" Value="Default" Type="String" />
+      <Value Key="Title" Value="" Type="String" />
+    </Entity>
+    <Entity TargetType="3" AssignmentObjectType="App" AttributeSetStaticName="be34f64b-7d1f-4ad0-b488-dabbbb01a186" AttributeSetName="LightSpeedOutputDecorator" EntityGUID="fb62a4d3-5f06-4e6f-9cf8-c2c976316a48" Json="True" KeyNumber="49">
+      <Value Key="Advanced" Value="" Type="String">
+        <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+      <Value Key="ByUrlParameters" Value="False" Type="Boolean">
+        <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+      <Value Key="Duration" Value="-1" Type="Number">
+        <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+      <Value Key="DurationEditors" Value="300" Type="Number">
+        <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+      <Value Key="DurationSystemAdmin" Value="60" Type="Number">
+        <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+      <Value Key="DurationUsers" Value="-1" Type="Number">
+        <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+      <Value Key="Title" Value="🚫" Type="String">
+        <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+      <Value Key="UrlParametersCaseSensitive" Value="False" Type="Boolean">
+        <Dimension DimensionID="42" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-ContentGroup" AttributeSetName="2SexyContent-ContentGroup" EntityGUID="b2fc8df4-e7de-4fdd-848b-9f082728ef02" Json="True">
+      <Value Key="Template" Value="ce1617bc-5c2b-4d71-9a01-d300bfb008c9" Type="Entity" />
+    </Entity>
+    <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="ContentGroupReference" AttributeSetName="ContentGroupReference" EntityGUID="67606a1f-306c-45c6-8805-c25a8f055438" Json="True">
+      <Value Key="Title" Value="" Type="String" />
+    </Entity>
   </Entities>
   <PortalFiles />
   <PortalFolders>
