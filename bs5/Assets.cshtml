@@ -8,7 +8,7 @@
   var isBs3 = Kit.Css.Is("bs3");
 
   var accordionData = new {
-    domId = DynamicModel.DomId,
+    domId = TypedModel.String("DomId"),
     options =  new {
     tagStickyHeader = "header",           // This is the sticky header in the page, the height of which must be respected on scroll
     classIsExpanded =  isBs3 ? "is-expanded" : "show" , // This marks open accordions

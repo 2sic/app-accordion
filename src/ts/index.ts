@@ -5,5 +5,3 @@ var winAny = window as any;
 winAny.appAccordion4 ??= {};
 winAny.appAccordion4.initAccordion ??= initAccordion;
 winAny.appAccordion4.initBs5 ??= initAccordionBs5;
-
-console.log('init')
