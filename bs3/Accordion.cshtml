@@ -1,20 +1,21 @@
-@inherits Custom.Hybrid.Razor14
+@inherits Custom.Hybrid.RazorTyped
 @using ToSic.Razor.Blade;
-@using Dynlist = System.Collections.Generic.IEnumerable<dynamic>;
 @{
-  var domId = "app-accordion4-" + CmsContext.Module.Id;
+  var domId = "app-accordion4-" + MyContext.Module.Id;
 }
 
 <div class="co-container-outer">
-  <div class="co-container-inner app-accordion4-wrapper" @domId @Edit.Attribute("quick-edit-config", new { modules = new {  enable = true }})>
-    @foreach (var accord in AsTypedList(Data.MyContent)) {
+  <div class="co-container-inner app-accordion4-wrapper" @domId @Kit.Edit.Attribute("quick-edit-config", new { modules = new {  enable = true }})>
+    @foreach (var accord in MyItems) {
 
       var initiallyExpanded = accord.Bool("InitiallyExpanded");
       var hasIcon = Text.Has(accord.String("Icon"));
 
-      var sectionHeaderId = "a-" + accord.EntityId;
-      var hiddenId = CmsContext.Module.Id + "-" + accord.EntityId;
-      var sectionId = "a-" + hiddenId;
+    // SectionHeaderId is the ID of the header of the accordion item
+    var sectionHeaderId = "a-" + accord.Id;
+    var hiddenId = MyContext.Module.Id + "-" + accord.Id;
+    // SectionId is the ID of the content of the accordion item and also the target attribute of the section header
+    var sectionId = "a-" + hiddenId;
 
       <div class="app-accordion4-item" @Kit.Toolbar.Default().For(accord)>
         <div class='app-accordion4-title @(initiallyExpanded ? "is-expanded" : "")' data-accordion-parent="#@sectionId">
@@ -34,7 +35,7 @@
 
          @* When the current item is just a demo-preview, show a message to help the editor *@
          @if (accord.IsDemoItem) {
-            if (CmsContext.User.IsContentAdmin) {
+            if (MyUser.IsContentAdmin) {
               <div class="alert alert-info" data-accordion-child="@hiddenId">
                 @App.Resources.Html("DemoItemMessage", container: "")
               </div>
@@ -43,14 +44,14 @@
             var innerBlocks = accord.Children("DesignedContent");
 
             // Show message if no content and user is admin
-            if (!innerBlocks.Any() && CmsContext.User.IsContentAdmin) {
+            if (!innerBlocks.Any() && MyUser.IsContentAdmin) {
               <div class="alert alert-info" data-accordion-child="@hiddenId">
                 @App.Resources.Html("NoContentMessage", container: "")
               </div>
             }
 
           @* Now show the inner section with all the blocks *@
-            <div class='sc-content-block-list @(initiallyExpanded ? "is-expanded" : "")' @Edit.ContextAttributes(accord, field: "DesignedContent") data-accordion-child="@sectionId">
+            <div class='sc-content-block-list @(initiallyExpanded ? "is-expanded" : "")' @Kit.Edit.ContextAttributes(accord, field: "DesignedContent") data-accordion-child="@sectionId">
               @foreach (var designedContent in accord.Children("DesignedContent")) {
                 @Kit.Render.One(designedContent);
               }

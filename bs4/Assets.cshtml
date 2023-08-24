@@ -1,5 +1,6 @@
-@inherits Custom.Hybrid.Razor14
+@inherits Custom.Hybrid.RazorTyped
+@* --- This is the Bootstrap4 Edition of the Asset Accordion --- *@
 @{
-  var domId = "app-accordion4-" + CmsContext.Module.Id;
+  var domId = "app-accordion4-" + MyContext.Module.Id;
 }
-@Html.Partial("../bs5/Assets.cshtml", new { DomId = domId })
+@Html.Partial("../bs5/Assets.cshtml", new { domId })

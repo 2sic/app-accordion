@@ -1,9 +1,9 @@
-@inherits Custom.Hybrid.Razor14
+@inherits Custom.Hybrid.RazorTyped
 @* --- This is the Bootstrap3 Edition of the Asset Accordion --- *@
 @* This file is almost identical to Bootstrap5, so it will simply load the BS5 Edition *@
 @* Note: The  difference is that in Bootstrap3 there are, data-bs-target as data-accordion-parent and is-expanded" : "show" and the Accordion not from Bs, own logic
  *@
 @{
-  var domId = "app-accordion4-" + CmsContext.Module.Id;
+  var domId = "app-accordion4-" + MyContext.Module.Id;
 }
-@Html.Partial("../bs5/Assets.cshtml", new { DomId = domId })
+@Html.Partial("../bs5/Assets.cshtml", new { domId })
