@@ -19,7 +19,7 @@ export function initAccordionBs5({ domId, options } : { domId: string, options: 
   let accordionWrapper = document.querySelector(`[${domId}]`)
 
   // attach click to all accordions when loading
-  var accordionOpener = accordionWrapper.querySelectorAll(`[${options.attrParent}]`);
+  var accordionOpener = accordionWrapper.querySelectorAll(`.${options.accordionOpener}`);
 
   accordionOpener.forEach((elem: HTMLElement) => {	
     elem.addEventListener('click', (event) => {
@@ -37,7 +37,7 @@ export function initAccordionBs5({ domId, options } : { domId: string, options: 
     const hash = window.location.hash;
     const targetButton = accordionWrapper.querySelector(`[${options.attrParent}="${hash}"]`);
     const targetContent = accordionWrapper.querySelector(hash);
-    
+
     // if target element exists scroll to element and open it
     if(targetButton && targetContent){
       const elemOffsetX = targetContent.getBoundingClientRect().top + window.scrollY - navHeight;

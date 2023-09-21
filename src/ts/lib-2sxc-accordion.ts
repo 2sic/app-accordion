@@ -19,7 +19,7 @@ export function initAccordion({ domId, options } : { domId: string, options: Acc
   
   let accordionWrapper = document.querySelector(`[${domId}]`)
   // attach click to all accordions when loading
-  var accordionOpener = accordionWrapper.querySelectorAll(`[${options.attrParent}]`);
+  var accordionOpener = accordionWrapper.querySelectorAll(`.${options.accordionOpener}`);
   
   accordionOpener.forEach((elem: HTMLElement) => {	
     elem.addEventListener('click', (event) => {

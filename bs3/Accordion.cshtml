@@ -1,7 +1,7 @@
 @inherits Custom.Hybrid.RazorTyped
 @using ToSic.Razor.Blade;
 @{
-  var domId = "app-accordion4-" + MyContext.Module.Id;
+  var domId = "app-accordion4-" + UniqueKey;
 }
 
 <div class="co-container-outer">
@@ -12,10 +12,9 @@
       var hasIcon = Text.Has(accord.String("Icon"));
 
     // SectionHeaderId is the ID of the header of the accordion item
-    var sectionHeaderId = "a-" + accord.Id;
-    var hiddenId = MyContext.Module.Id + "-" + accord.Id;
+    var sectionHeaderId = "a-" + UniqueKey + "-" + accord.Id;
     // SectionId is the ID of the content of the accordion item and also the target attribute of the section header
-    var sectionId = "a-" + hiddenId;
+    var sectionId = "a-" + accord.Id;
 
       <div class="app-accordion4-item" @Kit.Toolbar.Default().For(accord)>
         <div class='app-accordion4-title @(initiallyExpanded ? "is-expanded" : "")' data-accordion-parent="#@sectionId">
@@ -36,7 +35,7 @@
          @* When the current item is just a demo-preview, show a message to help the editor *@
          @if (accord.IsDemoItem) {
             if (MyUser.IsContentAdmin) {
-              <div class="alert alert-info" data-accordion-child="@hiddenId">
+              <div class="alert alert-info" data-accordion-child="@sectionId">
                 @App.Resources.Html("DemoItemMessage", container: "")
               </div>
             }
@@ -45,7 +44,7 @@
 
             // Show message if no content and user is admin
             if (!innerBlocks.Any() && MyUser.IsContentAdmin) {
-              <div class="alert alert-info" data-accordion-child="@hiddenId">
+              <div class="alert alert-info" data-accordion-child="@sectionId">
                 @App.Resources.Html("NoContentMessage", container: "")
               </div>
             }
