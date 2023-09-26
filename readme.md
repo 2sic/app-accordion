@@ -8,7 +8,7 @@ An accordion app often used to collapse blocks of content - ideal for mobile sit
 
 | Aspect              | Status | Comments or Version |
 | ------------------- | :----: | ------------------- |
-| 2sxc                | ✅    | requires 2sxc v16.02
+| 2sxc                | ✅    | requires 2sxc v16.04.00
 | Dnn                 | ✅    | For v9.6.1+
 | Oqtane 2            | ✅    | Requires v04.00.00
 | No jQuery           | ✅    |
