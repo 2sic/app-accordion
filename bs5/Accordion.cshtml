@@ -1,16 +1,17 @@
-@inherits Custom.Hybrid.RazorTyped
-@using ToSic.Razor.Blade;
+@inherits AppCode.Razor.AppRazor
+@using ToSic.Razor.Blade
+@using AppCode.Data
 
 @{
   var domId = "app-accordion4-" + UniqueKey;
 }
 
 <div class="app-accordion4-wrapper accordion accordion-flush" @domId @Kit.Edit.Attribute("quick-edit-config", new { modules = new {  enable = true }})>
-  @foreach (var accord in MyItems) {
+  @foreach (var accord in AsList<Accordion>(MyItems)) {
 
-    var initiallyExpanded = accord.Bool("InitiallyExpanded");
+    var initiallyExpanded = accord.InitiallyExpanded;
 
-    var hasIcon = Text.Has(accord.String("Icon"));
+    var hasIcon = accord.IsNotEmpty("Icon");
 
     // SectionHeaderId is the ID of the header of the accordion item
     var sectionHeaderId = "a-" + UniqueKey + accord.Id;
@@ -26,8 +27,8 @@
     <div class="accordion-item" @Kit.Toolbar.Default().For(accord)>
       <h2 class="accordion-header" id="@sectionHeaderId">
         <button class='accordion-button @(initiallyExpanded ? "" : "collapsed")' type="button" @bsToggleAttr="collapse" @bsTargetAttr="#@sectionId" aria-expanded="true" aria-controls="@sectionHeaderId">
-          @if (hasIcon) { <span><i class='@marginRight co-icon fas @accord.String("Icon")' aria-hidden="true"></i></span> }
-          @accord.String("Title")
+          @if (hasIcon) { <span><i class='@marginRight co-icon fas @accord.Icon' aria-hidden="true"></i></span> }
+          @accord.Title
         </button>
       </h2>
       <div id="@sectionId" class='accordion-collapse collapse @(initiallyExpanded ? "show" : "")' aria-labelledby="@sectionId">
@@ -41,7 +42,7 @@
               </div>
             }
           } else {
-            var innerBlocks = accord.Children("DesignedContent");
+            var innerBlocks = accord.DesignedContent;
 
             // Show message if no content and user is admin
             if (!innerBlocks.Any() && MyUser.IsContentAdmin) {
