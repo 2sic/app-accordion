@@ -27,7 +27,9 @@
     <div class="accordion-item" @Kit.Toolbar.Default().For(accord)>
       <h2 class="accordion-header" id="@sectionHeaderId">
         <button class='accordion-button @(initiallyExpanded ? "" : "collapsed")' type="button" @bsToggleAttr="collapse" @bsTargetAttr="#@sectionId" aria-expanded="true" aria-controls="@sectionHeaderId">
-          @if (hasIcon) { <span><i class='@marginRight co-icon fas @accord.Icon' aria-hidden="true"></i></span> }
+          @if (hasIcon) { 
+            <span><i class='@marginRight co-icon fas @accord.Icon' aria-hidden="true"></i></span> 
+            }
           @accord.Title
         </button>
       </h2>
@@ -43,7 +45,6 @@
             }
           } else {
             var innerBlocks = accord.DesignedContent;
-
             // Show message if no content and user is admin
             if (!innerBlocks.Any() && MyUser.IsContentAdmin) {
               <div class="alert alert-info" data-accordion-child="@sectionId">
