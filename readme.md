@@ -6,11 +6,11 @@
 
 An accordion app often used to collapse blocks of content - ideal for mobile sites.
 
-| Aspect              | Status | Comments or Version |
-| ------------------- | :----: | ------------------- |
+| Aspect              | Status | Comments or Version 
+| ------------------- | :----: | ------------------- 
 | 2sxc                | ✅    | requires 2sxc v17.06.02
 | Dnn                 | ✅    | For v9.6.1+
-| Oqtane 2            | ✅    | Requires v04.00.00
+| Oqtane              | ✅    | Requires v04.00.00
 | No jQuery           | ✅    |
 | Live Demo           | ➖    |
 | Install Checklist   | ✅    | See [Installation](https://azing.org/2sxc/r/y6k46oQa) on [azing.org](https://azing.org/2sxc)
@@ -58,3 +58,5 @@ If you want to customize the CSS, you will usually follow the ["Create Custom St
   * everything typed
 * v04.06.17 2024-04
   * strong typed
+  * Auto Generated Class
+  * Typed MyItem

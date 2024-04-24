@@ -6,12 +6,14 @@
   var domId = "app-accordion4-" + UniqueKey;
 }
 
-<div class="app-accordion4-wrapper accordion accordion-flush" @domId @Kit.Edit.Attribute("quick-edit-config", new { modules = new {  enable = true }})>
+<div class="app-accordion4-wrapper accordion accordion-flush" 
+  @domId 
+  @Kit.Edit.Attribute("quick-edit-config", new { modules = new {  enable = true }})
+>
+ 
   @foreach (var accord in AsList<Accordion>(MyItems)) {
 
     var initiallyExpanded = accord.InitiallyExpanded;
-
-    var hasIcon = accord.IsNotEmpty("Icon");
 
     // SectionHeaderId is the ID of the header of the accordion item
     var sectionHeaderId = "a-" + UniqueKey + accord.Id;
@@ -26,8 +28,15 @@
 
     <div class="accordion-item" @Kit.Toolbar.Default().For(accord)>
       <h2 class="accordion-header" id="@sectionHeaderId">
-        <button class='accordion-button @(initiallyExpanded ? "" : "collapsed")' type="button" @bsToggleAttr="collapse" @bsTargetAttr="#@sectionId" aria-expanded="true" aria-controls="@sectionHeaderId">
-          @if (hasIcon) { 
+        <button type="button"
+          class='accordion-button 
+          @(initiallyExpanded ? "" : "collapsed")'
+          @bsToggleAttr="collapse" 
+          @bsTargetAttr="#@sectionId" 
+          aria-expanded="true"
+          aria-controls="@sectionHeaderId"
+         >
+          @if (accord.IsNotEmpty("Icon")) { 
             <span><i class='@marginRight co-icon fas @accord.Icon' aria-hidden="true"></i></span> 
             }
           @accord.Title
@@ -53,7 +62,10 @@
             }
 
             @* Now show the inner section with all the blocks *@
-            <div class='sc-content-block-list @(initiallyExpanded ? "show" : "")' @Kit.Edit.ContextAttributes(accord, field: "DesignedContent") data-accordion-child="@sectionId">
+            <div class='sc-content-block-list 
+              @(initiallyExpanded ? "show" : "")' 
+              @Kit.Edit.ContextAttributes(accord, field: "DesignedContent") data-accordion-child="@sectionId"
+            >
               @foreach (var designedContent in innerBlocks) {
                 @Kit.Render.One(designedContent);
               }
