@@ -31,7 +31,7 @@ export function initAccordion({ domId, options } : { domId: string, options: Acc
       const targetOpenElem = accordionWrapper.querySelector(`[${options.attrChild}="${hash}"]`) as HTMLElement;		
 
       // add hash to url
-      location.hash = hash;
+      history.pushState({}, "", `${hash}`); 
 
       // open / close mechanic for slide
       toggle(targetOpenElem, {});

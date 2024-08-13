@@ -28,7 +28,7 @@ export function initAccordionBs5({ domId, options } : { domId: string, options: 
       const hash = elem.getAttribute(options.attrParent);
       
       // add hash to url
-      location.hash = hash;
+      history.pushState({}, "", `${hash}`); 
     })
   });
 
