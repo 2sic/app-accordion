@@ -16,12 +16,17 @@ export function initAccordionBs5({ domId, options } : { domId: string, options: 
   var nav = (document.getElementsByTagName(options.tagStickyHeader)[0] as HTMLElement);
   var navHeight = (nav != null ? nav.offsetHeight : 0);
 
-  let accordionWrapper = document.querySelector(`[${domId}]`)
+  let accordionWrapper = document.querySelector(`[${domId}]`);
+
+  if (!accordionWrapper) {
+    console.error(`Accordion wrapper with DOM ID ${domId} not found.`);
+    return;
+  }
 
   // attach click to all accordions when loading
   var accordionOpener = accordionWrapper.querySelectorAll(`.${options.accordionOpener}`);
 
-  accordionOpener.forEach((elem: HTMLElement) => {	
+  accordionOpener.forEach((elem: Element) => {	
     elem.addEventListener('click', (event) => {
       event.preventDefault();
 

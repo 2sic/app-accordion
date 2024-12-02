@@ -17,16 +17,20 @@ export function initAccordion({ domId, options } : { domId: string, options: Acc
   var nav = (document.getElementsByTagName(options.tagStickyHeader)[0] as HTMLElement);
   var navHeight = (nav != null ? nav.offsetHeight : 0);
   
-  let accordionWrapper = document.querySelector(`[${domId}]`)
+  let accordionWrapper = document.querySelector(`[${domId}]`);
+  if (!accordionWrapper) {
+    console.error(`Accordion wrapper with domId ${domId} not found.`);
+    return;
+  }
   // attach click to all accordions when loading
   var accordionOpener = accordionWrapper.querySelectorAll(`.${options.accordionOpener}`);
   
-  accordionOpener.forEach((elem: HTMLElement) => {	
+  accordionOpener.forEach((elem: Element) => {	
     elem.addEventListener('click', (event) => {
       event.preventDefault();
 
       const currentElem = event.currentTarget as HTMLElement;
-      const hash = currentElem.dataset.accordionParent.replace('#', '');
+      const hash = currentElem.dataset.accordionParent ? currentElem.dataset.accordionParent.replace('#', '') : '';
       const parent = currentElem.parentElement;
       const targetOpenElem = accordionWrapper.querySelector(`[${options.attrChild}="${hash}"]`) as HTMLElement;		
 
@@ -35,7 +39,9 @@ export function initAccordion({ domId, options } : { domId: string, options: Acc
 
       // open / close mechanic for slide
       toggle(targetOpenElem, {});
-      parent.classList.toggle(`${options.classIsExpanded}`);
+      if (parent) {
+        parent.classList.toggle(`${options.classIsExpanded}`);
+      }
     })
   });
 
@@ -49,7 +55,9 @@ export function initAccordion({ domId, options } : { domId: string, options: Acc
       const elemOffsetX = targetHashElem.getBoundingClientRect().top + window.scrollY - navHeight;
       const targetOpenElem = accordionWrapper.querySelector(`[${options.attrChild}="${hash}"]`) as HTMLElement;		
 
-      targetHashElem.parentElement.classList.add(`${options.classIsExpanded}`);
+      if (targetHashElem.parentElement) {
+        targetHashElem.parentElement.classList.add(`${options.classIsExpanded}`);
+      }
 
       // open accordion
       show(targetOpenElem, {
