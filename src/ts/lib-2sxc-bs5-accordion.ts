@@ -19,7 +19,6 @@ export function initAccordionBs5({ domId, options } : { domId: string, options: 
   let accordionWrapper = document.querySelector(`[${domId}]`);
 
   if (!accordionWrapper) {
-    console.error(`Accordion wrapper with DOM ID ${domId} not found.`);
     return;
   }
 
