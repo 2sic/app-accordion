@@ -19,7 +19,6 @@ export function initAccordion({ domId, options } : { domId: string, options: Acc
   
   let accordionWrapper = document.querySelector(`[${domId}]`);
   if (!accordionWrapper) {
-    console.error(`Accordion wrapper with domId ${domId} not found.`);
     return;
   }
   // attach click to all accordions when loading
