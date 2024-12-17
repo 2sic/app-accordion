@@ -1,4 +1,5 @@
 import { AccordionOptions } from './lib-2sxc-accordion-options';
+declare let $2sxc: any;
 
 /*
   This is a shared code used in various 2sxc apps. Make sure that they are in sync, so if you improve it, improve all 2sxc apps which use this. 
@@ -23,18 +24,19 @@ export function initAccordionBs5({ domId, options } : { domId: string, options: 
   }
 
   // attach click to all accordions when loading
-  var accordionOpener = accordionWrapper.querySelectorAll(`.${options.accordionOpener}`);
-
-  accordionOpener.forEach((elem: Element) => {	
-    elem.addEventListener('click', (event) => {
-      event.preventDefault();
-
-      const hash = elem.getAttribute(options.attrParent);
-      
-      // add hash to url
-      history.pushState({}, "", `${hash}`); 
-    })
-  });
+  var accordionOpeners = accordionWrapper.querySelectorAll(`.${options.accordionOpener}`);
+  
+  if ($2sxc.env.platform() !== 'oqtane') {
+    accordionOpeners.forEach((elem: Element) => {
+      elem.addEventListener('click', (event) => {
+        event.preventDefault();
+        const parentAttr = elem.getAttribute(options.attrParent);
+        if (parentAttr) {
+          history.pushState({}, "", parentAttr);
+        }
+      });
+    });
+  }
 
   // get hash from url and open specific item
   if(window.location.hash){
