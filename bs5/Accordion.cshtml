@@ -15,25 +15,19 @@
     // SectionId is the ID of the content of the accordion item and also the target attribute of the section header
     var sectionId = "a-" + accord.Id;
 
-    // Check if skin is BS5 ur BS4 and figure out the best CSS classes for each
-    var isBs5 = Kit.Css.Is("bs5");
-    var bsToggleAttr = isBs5 ? "data-bs-toggle" : "data-toggle";
-    var bsTargetAttr = isBs5 ? "data-bs-target" : "data-target";
-    var marginRight = isBs5 ? "me-3" : "mr-3";
-
     <div class="accordion-item" @Kit.Toolbar.Default().For(accord)>
       @* Header of a Drawer with Icon + Title and up/down at the right hand side *@
       <h2 class="accordion-header" id="@sectionHeaderId">
         <button type="button"
           class='accordion-button @(expanded ? "" : "collapsed")'
-          @bsToggleAttr="collapse" 
-          @bsTargetAttr="#@sectionId" 
+          data-bs-toggle="collapse"
+          data-bs-target="#@sectionId"
           aria-expanded="true"
           aria-controls="@sectionHeaderId"
         >
           @* Optional icon in front of the title *@
           @if (accord.IsNotEmpty("Icon")) { 
-            <span><i class='@marginRight co-icon fas @accord.Icon' aria-hidden="true"></i></span> 
+            <span><i class='me-3 co-icon fas @accord.Icon' aria-hidden="true"></i></span>
           }
           @accord.Title
         </button>
